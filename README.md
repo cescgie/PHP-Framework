@@ -19,3 +19,43 @@ RewriteRule ^<span class="o">(</span>.<span class="k">*</span><span class="o">)<
 </code></pre></div> 
 <li>On this example i use apache server. After starting the server, open the browser and go to <code>http://localhost/Simple-MVC/</code>. If there isn’t any problem, you can see <a href="http://www.mediafire.com/view/x8x8xnqc4rdftvg/Screenshoot%202015-05-18%20um%2014.12.49.png">this view</a> on your browser. </li>
 </ul>
+<br>
+Before we start using the site (in case you want to understand the code more deeply), here is an explanation of the contents of the framework.
+
+<h3>Directories and files</h3>
+<div class="highlight language-" data-lang=""><pre><code>* Directory / File *         * Description*
+├── config.php                  - Config file
+├── controllers                 - All Controller
+│   └── welcome.php             - Example for Controller
+├── core                        - Core file of Simple-MVC
+│   ├── bootstrap.php           - Heart of all file
+│   ├── controller.php          - Base Controller
+│   ├── error.php               - Error Controller
+│   ├── logger.php              - Logger Information
+│   ├── model.php               - Base Model
+│   └── view.php                - Base View
+├── errorlog.html               - Error log
+├── helpers                     - All Helpers
+│   ├── database.php            - Access to Database
+│   ├── message.php             - Message Store
+│   ├── password.php            - Passwort Generator
+│   ├── session.php             - Session Management
+│   └── url.php                 - Address Helper
+├── index.php                   - Start Point
+├── models                      - All Models
+│   └── sample_model.php        - Example for Model
+├── static                      - Static File
+│   ├── css                     - Stylesheets
+│   │   ├── bootstrap.min.css   - Bootstrap
+│   │   └── style.css           - Own Created Styles
+│   └── img                     - Directory for Images
+└── views                       - All Views
+    ├── error                   - Error Management
+    │   └── 404.php             - File not found
+    │   └── default.php         - Standard Error
+    ├── footer.php              - Foot of Page
+    ├── header.php              - Header of Page
+    ├── message.php             - Messages
+    └── welcome.php             - Welcome Page
+</code></pre>
+</div>
