@@ -17,8 +17,9 @@ I use a modified version. For the original code, see <a href="http://simplemvcfr
 <div class="highlight language-shell" data-lang="shell"><pre><code><span class="c">#For example</span>
 RewriteRule ^<span class="o">(</span>.<span class="k">*</span><span class="o">)</span><span class="nv">$ </span>/Simple-MVC/index.php?url<span class="o">=</span><span class="nv">$1</span> <span class="o">[</span>QSA,L]
 </code></pre></div> 
-<li>On this example i use apache server. After starting the server, open the browser and go to <code>http://localhost/Simple-MVC/</code>. If there isn’t any problem, you can see <a href="http://www.mediafire.com/view/x8x8xnqc4rdftvg/Screenshoot%202015-05-18%20um%2014.12.49.png">this view</a> on your browser. </li>
-</ul>
+<li>On this example i use apache server. After starting the server, open the browser and go to <code>http://localhost/Simple-MVC/</code>. If there isn’t any problem, you can see this view on your browser. </li></ul>
+![alt tag](https://raw.githubusercontent.com/cescgie/Simple-MVC/master/static/img/Screenshoot2015-05-18um15.33.42.png)
+
 <br>
 Before we start using the site (in case you want to understand the code more deeply), here is an explanation of the contents of the framework.
 
