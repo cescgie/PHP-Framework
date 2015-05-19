@@ -7,7 +7,7 @@ It brings with different helper, for example, take care of the database access o
 
 <h3>Installation</h3>
 
-I use a modified version. For the original code, see <a href="http://simplemvcframework.com/php-framework">simplemvcframework.com</a> or on <a href="https://github.com/simple-mvc-framework/v1">Github</a>. Note: The original document may differ partially.
+This is modified version. For the original code, see <a href="http://simplemvcframework.com/php-framework">simplemvcframework.com</a> or on <a href="https://github.com/simple-mvc-framework/v1">Github</a>. Note: The original document may differ partially.
 <ul>
 <li>Download or clone the Framework.</li>
 <li>Unpack the archive.</li>
@@ -21,7 +21,7 @@ RewriteRule ^<span class="o">(</span>.<span class="k">*</span><span class="o">)<
 ![alt tag](https://raw.githubusercontent.com/cescgie/Simple-MVC/master/static/img/Screenshoot2015-05-18um15.33.42.png)
 
 <br>
-Before we start using the site (in case you want to understand the code more deeply), here is an explanation of the contents of the framework.
+Thi is an explanation of the contents of the framework.
 
 <h3>Directories and files</h3>
 <div class="highlight language-" data-lang=""><pre><code>* Directory / File *         * Description*
@@ -58,5 +58,38 @@ Before we start using the site (in case you want to understand the code more dee
     ├── header.php              - Header of Page
     ├── message.php             - Messages
     └── welcome.php             - Welcome Page
+</code></pre>
+</div>
+
+<br>
+<h3>Model View Controller</h3>
+
+Model–View–Controller (MVC) is a software architectural pattern for implementing user interfaces. It divides a given software application into three interconnected parts, so as to separate internal representations of information from the ways that information is presented to or accepted from the user. (Wikipedia 19.05.2015 11:02 CET)
+
+<h4>Controller</h4>
+The controller contains the program logic, ie those parts in which decisions, which is under what conditions do. From here, the data model will be handed over or received from that. And ultimately, the finished data to be passed to the view, rendered and communicated to the visitors of the site.
+
+Controller always inherit from - surprise - the class Controller, or one of his children. And they come as standard _model about the variables and _view, about which can be accessed on the corresponding model and a general view. example:
+<div class="highlight language-php" data-lang="php"><pre><code>$this-&gt;_model-&gt;get($id);
+$this-&gt;_view-&gt;render('header', $data);
+</code></pre>
+</div>
+At this point, it is again important to the HTTP methods to call itself into memory. Since links will work through GET, we have methods like DELETE (see example above: ... / users / delete / bob) rebuild as part of the URL. This is problematic in that we have two requests in a request: Deleting a user and display a page. To resolve this conflict, the two parts are separated: To delete a product, the corresponding URL is driven, but rendered no view, but then redirected to another page - for example, an overview of all users. This also prevents e.g. an erase command accidentally requested several times, shared or bookmarked (oO) is.
+
+<h4>Model</h4>
+
+The model takes care of everything that has to do with data and writes to the database or read from there. Our <code>user</code>-controller there were a model <code>User_Model</code>, the individual or issue multiple users, create new and can modify and delete existing ones. Models must be in the folder models, such as the controller can be called and bear the suffix <code>_model</code>. (Ie the file of the controller user.php that the model has hot user_model.php.)
+
+<h4>View</h4>
+
+About the View our templates from the folder view will be rendered. A template contains HTML and PHP code to output and little or no own logic. Try to build templates that one - to meet task - and only one. And you can combine these templates later into larger ones. For example, if a search form, you should outsource it to a separate file and integrate them into other templates.
+
+The template can only render data that has been also handed over to him. In Simple MVC the array <code>data</code> is used as a container for it. This new keys and values can always be assigned to the controller. In the example, you will find the key <code>title</code>, which will be presented later on the function <code>render</code> to the template <code>header</code> and output there.
+
+<div class="highlight language-php" data-lang="php"><pre><code>$data['title'] = 'Home';
+   ...
+$this-&gt;_view-&gt;render('header', $data);
+   ...
+<span class="nt">&lt;title&gt;</span><span class="cp">&lt;?=</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span> <span class="cp">?&gt;</span><span class="nt">&lt;/title&gt;</span>
 </code></pre>
 </div>
