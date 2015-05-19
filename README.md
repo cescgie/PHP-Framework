@@ -75,6 +75,7 @@ $this-&gt;_view-&gt;render('header', $data);
 </code></pre>
 </div>
 At this point, it is again important to the HTTP methods to call itself into memory. Since links will work through GET, we have methods like DELETE (see example above: ... / users / delete / bob) rebuild as part of the URL. This is problematic in that we have two requests in a request: Deleting a user and display a page. To resolve this conflict, the two parts are separated: To delete a product, the corresponding URL is driven, but rendered no view, but then redirected to another page - for example, an overview of all users. This also prevents e.g. an erase command accidentally requested several times, shared or bookmarked (oO) is.
+![alt tag](https://raw.githubusercontent.com/cescgie/Simple-MVC/master/static/img/Controller2.png)
 
 <h4>Model</h4>
 
