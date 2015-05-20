@@ -12,8 +12,8 @@ This is modified version. For the original code, see <a href="http://simplemvcfr
 <li>Download or clone the Framework.</li>
 <li>Unpack the archive.</li>
 <li>Move the new folder Simple-MVC in the document root of your webserver (htdocs, public_html or similar).</li>
-<li>Open config.php file and change the constant DIR on the URL to the directory (for example, http://localhost/Simple-MVC/) then change the data in the database. Beware that the line define ('DB_TYPE', 'mysql'); not commented out or deleted. <b>You can configure the database later because we don’t use it for the first step yet.</b> </li>
-<li>It is included a file called .htaccess. Make sure that this file exists safely. (Linux or Mac OS, it is invisible - you can in the Shell by ls -a check if it is available.). If there is, change the path to where your Simple-MVC is. </li>
+<li>Open config.php file and change the constant <code>DIR</code> on the URL to the directory (for example, <code>http://localhost/Simple-MVC/</code>) then change the data in the database. Beware that the line <code>define ('DB_TYPE', 'mysql');</code> not commented out or deleted. <b>You can configure the database later because we don’t use it for the first step yet.</b> </li>
+<li>It is included a file called .htaccess. Make sure that this file exists safely. (Linux or Mac OS, it is invisible - you can in the Shell by <code>ls -a</code> check if it is available.). If there is, change the path to where your Simple-MVC is. </li>
 <div class="highlight language-shell" data-lang="shell"><pre><code><span class="c">#For example</span>
 RewriteRule ^<span class="o">(</span>.<span class="k">*</span><span class="o">)</span><span class="nv">$ </span>/Simple-MVC/index.php?url<span class="o">=</span><span class="nv">$1</span> <span class="o">[</span>QSA,L]
 </code></pre></div> 
@@ -69,12 +69,12 @@ Model–View–Controller (MVC) is a software architectural pattern for implemen
 <h4>Controller</h4>
 The controller contains the program logic, ie those parts in which decisions, which is under what conditions do. From here, the data model will be handed over or received from that. And ultimately, the finished data to be passed to the view, rendered and communicated to the visitors of the site.
 
-Controller always inherit from - surprise - the class Controller, or one of his children. And they come as standard _model about the variables and _view, about which can be accessed on the corresponding model and a general view. example:
+Controller always inherit from - surprise - the class <code>Controller</code>, or one of his children. And they come as standard <code>_model</code> about the variables and <code>_view</code>, about which can be accessed on the corresponding model and a general view. example:
 <div class="highlight language-php" data-lang="php"><pre><code>$this-&gt;_model-&gt;get($id);
 $this-&gt;_view-&gt;render('header', $data);
 </code></pre>
 </div>
-At this point, it is again important to the HTTP methods to call itself into memory. Since links will work through GET, we have methods like DELETE (see example above: ... / users / delete / bob) rebuild as part of the URL. This is problematic in that we have two requests in a request: Deleting a user and display a page. To resolve this conflict, the two parts are separated: To delete a product, the corresponding URL is driven, but rendered no view, but then redirected to another page - for example, an overview of all users. This also prevents e.g. an erase command accidentally requested several times, shared or bookmarked (oO) is.
+At this point, it is again important to the HTTP methods to call itself into memory. Since links will work through <code>GET</code>, we have methods like <code>DELETE</code> (see example above: <code>... / users / delete / bob)</code> rebuild as part of the URL. This is problematic in that we have two requests in a request: Deleting a user and display a page. To resolve this conflict, the two parts are separated: To delete a product, the corresponding URL is driven, but rendered no view, but then redirected to another page - for example, an overview of all users. This also prevents e.g. an erase command accidentally requested several times, shared or bookmarked (oO) is.
 ![alt tag](https://raw.githubusercontent.com/cescgie/Simple-MVC/master/static/img/Controller2.png)
 
 <h4>Model</h4>
