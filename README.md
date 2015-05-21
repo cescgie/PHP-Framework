@@ -35,7 +35,7 @@ RewriteRule ^<span class="o">(</span>.<span class="k">*</span><span class="o">)<
 ![alt tag](https://raw.githubusercontent.com/cescgie/Simple-MVC/master/static/img/Screenshoot2015-05-18um15.33.42.png)
 
 <br>
-Thi is an explanation of the contents of the framework.
+An explanation of contents inside this framework.
 
 Directories and Files
 ------------
