@@ -1,5 +1,5 @@
 # Simple-MVC 
-(<a href="https://beier.f4.htw-berlin.de/wiki/php/simple-mvc/">Source or German Version</a>)
+<a href="https://beier.f4.htw-berlin.de/wiki/php/simple-mvc/">Source or German Version</a>
 
 Table of Contents
 -----------------
