@@ -1,5 +1,5 @@
 # Simple-MVC 
-<a href="https://beier.f4.htw-berlin.de/wiki/php/simple-mvc/">Source/German Version</a>
+<a href="https://beier.f4.htw-berlin.de/wiki/php/simple-mvc/">Source / German Version</a>
 
 Table of Contents
 -----------------
@@ -25,7 +25,8 @@ This is modified version. For the original code, see <a href="http://simplemvcfr
 <ul>
 <li>Download or clone the Framework.</li>
 <li>Unpack the archive.</li>
-<li>Move the new folder Simple-MVC in the document root of your webserver (htdocs, public_html or similar).</li>
+<li>You can rename that archived folder to what you want but due to depended code inside it, we have to name it first as "Simple-MVC".</li>
+<li>Move the folder Simple-MVC into document root of your webserver (htdocs, public_html or similar).</li>
 <li>Open config.php file and change the constant <code>DIR</code> on the URL to the directory (for example, <code>http://localhost/Simple-MVC/</code>) then change the data in the database. Beware that the line <code>define ('DB_TYPE', 'mysql');</code> not commented out or deleted. <b>You can configure the database later because we don’t use it for the first step yet.</b> </li>
 <li>It is included a file called .htaccess. Make sure that this file exists safely. (Linux or Mac OS, it is invisible - you can in the Shell by <code>ls -a</code> check if it is available.). If there is, change the path to where your Simple-MVC is. </li>
 <div class="highlight language-shell" data-lang="shell"><pre><code><span class="c">#For example</span>
