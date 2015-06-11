@@ -1,4 +1,4 @@
-# PHP-Framework 
+# Simple-MVC 
 <a href="https://beier.f4.htw-berlin.de/wiki/php/simple-mvc/">Source/German Version</a>
 
 Table of Contents
